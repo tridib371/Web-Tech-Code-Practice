@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Demo</title>
+</head>
+<body>
+    <p class="data">First</p>
+    <p class="data">Second</p>
+    <script>
+        
+       let x = document.getElementsByClassName('data')[0].textContent;
+       // [0] for First, [1] for Second
+       console.log(x);
+    </script>
+</body>
+</html>
+............................................................................
+'use strict'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+        'use strict';
+       var x = 10; // GLOBAL 
+        console.log(x);
+    </script>
+</body>
+</html>
+..............................................................................
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+    button {
+  background: #FF4742;
+  color: white;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;}
+    </style>
+</head>
+<body>      
+              <div id="house">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+              </div>  
+
+              <button type="button" id="button1">Button1</button>
+              <button type="button" id="button2">Button2</button>
+              <button type="button" id="button3">Button3</button>
+
+              <p>right click then inspect</p>
+
+        <script>
+                let x = document.getElementById("house");
+                let bt1 = document.getElementById("button1");
+                let bt2 = document.getElementById("button2");
+                let bt3 = document.getElementById("button3");
+
+                bt1.addEventListener('click', ()=>{
+                    console.log(x);
+                });             
+                bt2.addEventListener('click', ()=>{
+                    let roomExtra = document.createElement("p");
+                    x.appendChild(roomExtra);
+                    console.log("Added");
+                });
+                bt3.addEventListener('click', ()=>{
+                   let rooms = document.querySelectorAll("p");
+                   x.removeChild(rooms[0]);
+                   console.log("Removed");
+                })
+        </script>        
+</body>
+</html>
+........................................................................
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <script>
+        var Person1 = {
+            fname: "John",
+            lname: "Doe",
+            status: true,
+            age: 25,
+            hike : function (loc) {
+                return "Goes to hiking at "+this.location + " of "+loc+" thana";
+            }, 
+            get gfname() {
+                return this.fname;
+            }     
+        };
+
+        Person1.location = "Kuratoli";
+
+        Person1.myMethod1 = function () {alert('M2');}
+
+       // console.log(Person1.fname); 
+       // console.log(Person1.location); 
+      // console.log(Person1.hike("Vatara"));
+     //  Person1.myMethod1();
+     //console.log(Person1.gfname);
+
+
+    </script>
+</body>
+</html>
+..................................................................
+
+Using constructor
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    <h1>JS OBJECTS USING CONSTRUCTOR</h1>
+
+    <script>
+        function Person (fname, lname, age) {
+            this.fname = fname,
+            this.lname = lname,
+            this.age = age,
+            this.greeting = function() {
+                alert('hi');
+            }
+        };
+        person1 = new Person("John", "Doe", 25);
+        person2 = new Person("Jane", "Doe", 19);
+
+        person1.location = "Kuratoli";
+
+        console.log(person1.location);
+        console.log(person1.greeting());
+        
+    </script>
+</body>
+</html>
+
+..........................................................
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+<body>
+    
+        <script>
+            var Person1= {
+                fname : "John"
+            };
+
+            Object.defineProperty(Person1, "lname", {
+                value : "Doe",
+                writable: false, //descriptor
+                configurable: false
+            });
+            Person1.lname = "SARAH";
+            delete Person1.lname;
+            console.log(Person1.lname);
+        </script>
+</body>
+</html>
+

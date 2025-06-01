@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FORM SUBMISSION</title>
+</head>
+<body>
+    <h1>FORM</h1>
+    <p id="data"></p>
+    <form action="external.php" method="post" onsubmit="return validate()">
+        <input type="text" name="uname" id="uname">
+        <input type="submit" name="submit" value="submit">
+    </form>
+    <script>
+           
+
+          function validate() {
+            var x = document.getElementById('uname').value;
+              if (x=="") {
+                  document.getElementById('data').innerHTML = "No Data Provided";
+                  return false;
+              }
+          
+          }
+
+    </script>
+</body>
+</html>
